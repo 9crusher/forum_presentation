@@ -5,162 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Milestones — Presentation Links</title>
   <style>
-    :root {
-      --bg: #0f111a;
-      --card-bg: #1a1d2e;
-      --accent-1: #6c63ff;
-      --accent-2: #00bfa6;
-      --accent-3: #ffc107;
-      --accent-4: #ff6b6b;
-      --text: #e0e0e0;
-      --text-muted: #8892b0;
-    }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: #fff;
+      color: #222;
       line-height: 1.6;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
     }
 
-    header {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-    }
-
-    header h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
     }
 
     header p {
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-    }
-
-    .timeline {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem 4rem;
-      position: relative;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 28px;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: linear-gradient(to bottom, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-4));
-      border-radius: 3px;
-    }
-
-    .slide {
-      position: relative;
-      margin-bottom: 2.5rem;
-      padding-left: 64px;
-    }
-
-    .slide-number {
-      position: absolute;
-      left: 8px;
-      top: 0;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1rem;
-      color: #fff;
-      z-index: 1;
-    }
-
-    .slide:nth-child(1) .slide-number { background: var(--accent-1); }
-    .slide:nth-child(2) .slide-number { background: var(--accent-2); }
-    .slide:nth-child(3) .slide-number { background: var(--accent-3); color: #1a1d2e; }
-    .slide:nth-child(4) .slide-number { background: var(--accent-4); }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.5rem 1.75rem;
-      border: 1px solid rgba(255,255,255,0.06);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    }
-
-    .card h2 {
-      font-size: 1.35rem;
-      margin-bottom: 0.15rem;
-    }
-
-    .card .year {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .card .desc {
+      color: #888;
       font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
+      margin-bottom: 2.5rem;
     }
 
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+    .milestone {
+      padding-left: 1.5rem;
+      border-left: 2px solid #e0e0e0;
+      margin-bottom: 2rem;
+    }
+
+    .milestone h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .milestone .year {
+      font-size: 0.85rem;
+      color: #999;
+      margin-bottom: 0.4rem;
+    }
+
+    .milestone p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.6rem;
     }
 
     .links a {
-      display: inline-block;
-      padding: 0.35rem 0.85rem;
-      border-radius: 6px;
-      font-size: 0.85rem;
+      color: #0066cc;
       text-decoration: none;
-      color: #fff;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: background 0.2s;
+      font-size: 0.85rem;
+      margin-right: 1rem;
     }
 
     .links a:hover {
-      background: rgba(255,255,255,0.14);
-    }
-
-    .links a::before {
-      content: '↗ ';
-      font-size: 0.8rem;
+      text-decoration: underline;
     }
 
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: var(--text-muted);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e0e0e0;
+      color: #aaa;
       font-size: 0.8rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.6rem; }
-      .timeline::before { left: 22px; }
-      .slide { padding-left: 54px; }
-      .slide-number { left: 2px; width: 36px; height: 36px; font-size: 0.9rem; }
-      .card { padding: 1.1rem 1.2rem; }
     }
   </style>
 </head>
@@ -171,71 +79,52 @@
   <p>Key moments in the history of artificial intelligence</p>
 </header>
 
-<main class="timeline">
+<main>
 
-  <!-- Slide 1 -->
-  <section class="slide">
-    <div class="slide-number">1</div>
-    <div class="card">
-      <h2>ELIZA</h2>
-      <div class="year">1966 — First AI Chatbot</div>
-      <p class="desc">Created by Joseph Weizenbaum at MIT, ELIZA simulated a Rogerian psychotherapist and became the first program to attempt natural language conversation with humans.</p>
-      <div class="links">
-        <a href="https://en.wikipedia.org/wiki/ELIZA" target="_blank" rel="noopener">Wikipedia</a>
-        <a href="https://web.njit.edu/~ronMDAN/eliza.html" target="_blank" rel="noopener">Try ELIZA Online</a>
-        <a href="https://en.wikipedia.org/wiki/Joseph_Weizenbaum" target="_blank" rel="noopener">Joseph Weizenbaum</a>
-        <a href="https://en.wikipedia.org/wiki/ELIZA_effect" target="_blank" rel="noopener">The ELIZA Effect</a>
-      </div>
+  <div class="milestone">
+    <h2>ELIZA</h2>
+    <div class="year">1966 — First AI Chatbot</div>
+    <p>Created by Joseph Weizenbaum at MIT, ELIZA simulated a Rogerian psychotherapist and became the first program to attempt natural language conversation with humans.</p>
+    <div class="links">
+      <a href="https://www.masswerk.at/elizabot/eliza.html" target="_blank" rel="noopener">Try ELIZA Online</a>
     </div>
-  </section>
+  </div>
 
-  <!-- Slide 2 -->
-  <section class="slide">
-    <div class="slide-number">2</div>
-    <div class="card">
-      <h2>Deep Blue</h2>
-      <div class="year">1997 — IBM's Chess Champion</div>
-      <p class="desc">IBM's Deep Blue became the first computer to defeat a reigning world chess champion, Garry Kasparov, in a six-game match under standard tournament conditions.</p>
-      <div class="links">
-        <a href="https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)" target="_blank" rel="noopener">Wikipedia</a>
-        <a href="https://en.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov" target="_blank" rel="noopener">Deep Blue vs Kasparov</a>
-        <a href="https://www.ibm.com/history/deep-blue" target="_blank" rel="noopener">IBM History</a>
-        <a href="https://en.wikipedia.org/wiki/Garry_Kasparov" target="_blank" rel="noopener">Garry Kasparov</a>
-      </div>
+  <div class="milestone">
+    <h2>Deep Blue</h2>
+    <div class="year">1997 — IBM's Chess Champion</div>
+    <p>IBM's Deep Blue became the first computer to defeat a reigning world chess champion, Garry Kasparov, in a six-game match under standard tournament conditions.</p>
+    <div class="links">
+      <a href="https://www.ibm.com/history/deep-blue" target="_blank" rel="noopener">IBM History</a>
     </div>
-  </section>
+  </div>
 
-  <!-- Slide 3 -->
-  <section class="slide">
-    <div class="slide-number">3</div>
-    <div class="card">
-      <h2>Nano Banana</h2>
-      <div class="year">2024 — Nobel Prize in Chemistry</div>
-      <p class="desc">The 2024 Nobel Prize in Chemistry was awarded for computational protein design and AI-based protein structure prediction. The "nano banana" is a famous example of a custom-designed protein created by David Baker's lab using AI tools.</p>
-      <div class="links">
-        <a href="https://en.wikipedia.org/wiki/2024_Nobel_Prize_in_Chemistry" target="_blank" rel="noopener">Nobel Prize 2024</a>
-        <a href="https://en.wikipedia.org/wiki/David_Baker_(biochemist)" target="_blank" rel="noopener">David Baker</a>
-        <a href="https://en.wikipedia.org/wiki/AlphaFold" target="_blank" rel="noopener">AlphaFold</a>
-        <a href="https://www.nobelprize.org/prizes/chemistry/2024/summary/" target="_blank" rel="noopener">NobelPrize.org</a>
-      </div>
+  <div class="milestone">
+    <h2>AlexNet</h2>
+    <div class="year">2012 — Deep Learning Breakthrough</div>
+    <p>AlexNet won the ImageNet competition by a massive margin, proving that deep convolutional neural networks could dramatically outperform traditional computer vision and launching the modern deep learning era.</p>
+    <div class="links">
+      <a href="https://en.wikipedia.org/wiki/AlexNet" target="_blank" rel="noopener">Wikipedia</a>
     </div>
-  </section>
+  </div>
 
-  <!-- Slide 4 -->
-  <section class="slide">
-    <div class="slide-number">4</div>
-    <div class="card">
-      <h2>ChatGPT</h2>
-      <div class="year">2022 — The AI Moment</div>
-      <p class="desc">OpenAI's ChatGPT brought large language models to the mainstream, reaching 100 million users in two months and sparking a global conversation about the future of AI.</p>
-      <div class="links">
-        <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener">Wikipedia</a>
-        <a href="https://openai.com/blog/chatgpt" target="_blank" rel="noopener">OpenAI Announcement</a>
-        <a href="https://en.wikipedia.org/wiki/GPT-4" target="_blank" rel="noopener">GPT-4</a>
-        <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank" rel="noopener">Large Language Models</a>
-      </div>
+  <div class="milestone">
+    <h2>ChatGPT</h2>
+    <div class="year">2022 — The AI Moment</div>
+    <p>OpenAI's ChatGPT brought large language models to the mainstream, reaching 100 million users in two months and sparking a global conversation about the future of AI.</p>
+    <div class="links">
+      <a href="https://chatgpt.com" target="_blank" rel="noopener">Try ChatGPT</a>
     </div>
-  </section>
+  </div>
+
+  <div class="milestone">
+    <h2>Nano Banana</h2>
+    <div class="year">2024 — Nobel Prize in Chemistry</div>
+    <p>The 2024 Nobel Prize in Chemistry was awarded for computational protein design and AI-based protein structure prediction. The "nano banana" is a famous example of a custom-designed protein created by David Baker's lab using AI tools.</p>
+    <div class="links">
+      <a href="https://www.nobelprize.org/prizes/chemistry/2024/summary/" target="_blank" rel="noopener">NobelPrize.org</a>
+    </div>
+  </div>
 
 </main>
 
