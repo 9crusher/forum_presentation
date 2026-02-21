@@ -3,175 +3,451 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Milestones — Presentation Links</title>
+  <title>AI in 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: #fff;
-      color: #222;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #0a0a0b;
+      color: #e8e8ed;
       line-height: 1.6;
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 4rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
-    h1 {
-      font-size: 1.5rem;
+    /* Sticky nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      background: rgba(10, 10, 11, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+      color: #fff;
+      text-decoration: none;
     }
 
-    header p {
-      color: #888;
+    .nav-logo {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 1.25rem 4rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 8vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 3.5vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1.5;
+      max-width: 480px;
+    }
+
+    /* CTA section */
+    .cta-section {
+      padding: 4rem 1.25rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .cta-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .cta-card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-card p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 1.5rem;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      color: #0a0a0b;
+      text-decoration: none;
+      padding: 0.65rem 1.5rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: rgba(255, 255, 255, 0.85);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-button svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Section heading */
+    .section-heading {
+      padding: 3rem 1.25rem 0;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-heading p {
       font-size: 0.95rem;
-      margin-bottom: 2.5rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Timeline */
+    .timeline {
+      padding: 2rem 1.25rem 4rem;
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .milestone {
-      padding-left: 1.5rem;
-      border-left: 2px solid #e0e0e0;
-      margin-bottom: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .milestone h2 {
+    .milestone::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+    }
+
+    .milestone:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .milestone-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .milestone h3 {
       font-size: 1.1rem;
       font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.01em;
     }
 
-    .milestone .year {
-      font-size: 0.85rem;
-      color: #999;
-      margin-bottom: 0.4rem;
+    .milestone-year {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      letter-spacing: 0.02em;
+    }
+
+    .milestone-subtitle {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.01em;
     }
 
     .milestone p {
       font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 0.6rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.65;
+      margin-bottom: 1rem;
     }
 
-    .links a {
-      color: #0066cc;
+    .milestone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.5);
       text-decoration: none;
-      font-size: 0.85rem;
-      margin-right: 1rem;
+      transition: color 0.2s ease;
     }
 
-    .links a:hover {
-      text-decoration: underline;
+    .milestone-link:hover {
+      color: #fff;
     }
 
-    .live-demo {
-      background: #f0f7ff;
-      border: 2px solid #0066cc;
-      border-radius: 8px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 2.5rem;
+    .milestone-link svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.2s ease;
+    }
+
+    .milestone-link:hover svg {
+      transform: translateX(2px);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 2rem 1.25rem;
       text-align: center;
     }
 
-    .live-demo h2 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
+    footer p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.2);
     }
 
-    .live-demo p {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 0.75rem;
+    /* Subtle radial glow on hero */
+    .hero-glow {
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .live-demo a {
-      display: inline-block;
-      background: #0066cc;
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5rem 1.5rem;
-      border-radius: 5px;
-      font-size: 0.95rem;
-      font-weight: 500;
+    .hero-wrapper {
+      position: relative;
+      overflow: hidden;
     }
 
-    .live-demo a:hover {
-      background: #0052a3;
+    .hero {
+      position: relative;
+      z-index: 1;
     }
 
-    footer {
-      margin-top: 3rem;
-      padding-top: 1rem;
-      border-top: 1px solid #e0e0e0;
-      color: #aaa;
-      font-size: 0.8rem;
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      .hero {
+        padding: 8rem 2rem 5rem;
+      }
+
+      .cta-section {
+        padding: 4rem 2rem;
+      }
+
+      .section-heading {
+        padding: 4rem 2rem 0;
+      }
+
+      .timeline {
+        padding: 2rem 2rem 5rem;
+      }
+
+      .milestone {
+        padding: 2rem;
+      }
+
+      footer {
+        padding: 2.5rem 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>AI Milestones</h1>
-  <p>Key moments in the history of artificial intelligence</p>
-</header>
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-logo"><!-- logo placeholder --></div>
+    AI in 2026
+  </a>
+  <a href="https://forms.gle/LrD4YsneoDaMzEZ17" target="_blank" rel="noopener" class="nav-link">Sign up</a>
+</nav>
 
-<main>
+<div class="hero-wrapper">
+  <div class="hero-glow"></div>
+  <section class="hero">
+    <h1>Key moments in the history of artificial intelligence.</h1>
+    <p>From the first chatbot to Nobel Prize-winning AI. The breakthroughs that shaped the world we live in today.</p>
+  </section>
+</div>
 
-  <div class="live-demo">
+<section class="cta-section">
+  <div class="cta-card">
     <h2>Live Demo Sign-Up</h2>
-    <p>Want to participate in the live demo during the presentation? Sign up below!</p>
-    <a href="https://forms.gle/LrD4YsneoDaMzEZ17" target="_blank" rel="noopener">Sign Up</a>
+    <p>Want to participate in the live demo during the presentation? Join us.</p>
+    <a href="https://forms.gle/LrD4YsneoDaMzEZ17" target="_blank" rel="noopener" class="cta-button">
+      Sign Up
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l4-4-4-4"/></svg>
+    </a>
   </div>
+</section>
 
-  <div class="milestone">
-    <h2>ELIZA</h2>
-    <div class="year">1966 — First AI Chatbot</div>
+<div class="section-heading">
+  <h2>The milestones.</h2>
+  <p>A timeline of defining moments in AI history.</p>
+</div>
+
+<section class="timeline">
+
+  <article class="milestone">
+    <div class="milestone-header">
+      <h3>ELIZA</h3>
+      <span class="milestone-year">1966</span>
+    </div>
+    <div class="milestone-subtitle">First AI Chatbot</div>
     <p>Created by Joseph Weizenbaum at MIT, ELIZA simulated a Rogerian psychotherapist and became the first program to attempt natural language conversation with humans.</p>
-    <div class="links">
-      <a href="https://www.masswerk.at/elizabot/eliza.html" target="_blank" rel="noopener">Try ELIZA Online</a>
-    </div>
-  </div>
+    <a href="https://www.masswerk.at/elizabot/eliza.html" target="_blank" rel="noopener" class="milestone-link">
+      Try ELIZA Online
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l4-4-4-4"/></svg>
+    </a>
+  </article>
 
-  <div class="milestone">
-    <h2>Deep Blue</h2>
-    <div class="year">1997 — IBM's Chess Champion</div>
+  <article class="milestone">
+    <div class="milestone-header">
+      <h3>Deep Blue</h3>
+      <span class="milestone-year">1997</span>
+    </div>
+    <div class="milestone-subtitle">IBM's Chess Champion</div>
     <p>IBM's Deep Blue became the first computer to defeat a reigning world chess champion, Garry Kasparov, in a six-game match under standard tournament conditions.</p>
-    <div class="links">
-      <a href="https://www.ibm.com/history/deep-blue" target="_blank" rel="noopener">IBM History</a>
-    </div>
-  </div>
+    <a href="https://www.ibm.com/history/deep-blue" target="_blank" rel="noopener" class="milestone-link">
+      IBM History
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l4-4-4-4"/></svg>
+    </a>
+  </article>
 
-  <div class="milestone">
-    <h2>AlexNet</h2>
-    <div class="year">2012 — Deep Learning Breakthrough</div>
+  <article class="milestone">
+    <div class="milestone-header">
+      <h3>AlexNet</h3>
+      <span class="milestone-year">2012</span>
+    </div>
+    <div class="milestone-subtitle">Deep Learning Breakthrough</div>
     <p>AlexNet won the ImageNet competition by a massive margin, proving that deep convolutional neural networks could dramatically outperform traditional computer vision and launching the modern deep learning era.</p>
-    <div class="links">
-      <a href="https://en.wikipedia.org/wiki/AlexNet" target="_blank" rel="noopener">Wikipedia</a>
-    </div>
-  </div>
+    <a href="https://en.wikipedia.org/wiki/AlexNet" target="_blank" rel="noopener" class="milestone-link">
+      Wikipedia
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l4-4-4-4"/></svg>
+    </a>
+  </article>
 
-  <div class="milestone">
-    <h2>ChatGPT</h2>
-    <div class="year">2022 — The AI Moment</div>
+  <article class="milestone">
+    <div class="milestone-header">
+      <h3>ChatGPT</h3>
+      <span class="milestone-year">2022</span>
+    </div>
+    <div class="milestone-subtitle">The AI Moment</div>
     <p>OpenAI's ChatGPT brought large language models to the mainstream, reaching 100 million users in two months and sparking a global conversation about the future of AI.</p>
-    <div class="links">
-      <a href="https://chatgpt.com" target="_blank" rel="noopener">Try ChatGPT</a>
-    </div>
-  </div>
+    <a href="https://chatgpt.com" target="_blank" rel="noopener" class="milestone-link">
+      Try ChatGPT
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l4-4-4-4"/></svg>
+    </a>
+  </article>
 
-  <div class="milestone">
-    <h2>Nano Banana</h2>
-    <div class="year">2024 — Nobel Prize in Chemistry</div>
+  <article class="milestone">
+    <div class="milestone-header">
+      <h3>Nano Banana</h3>
+      <span class="milestone-year">2024</span>
+    </div>
+    <div class="milestone-subtitle">Nobel Prize in Chemistry</div>
     <p>The 2024 Nobel Prize in Chemistry was awarded for computational protein design and AI-based protein structure prediction. The "nano banana" is a famous example of a custom-designed protein created by David Baker's lab using AI tools.</p>
-    <div class="links">
-      <a href="https://www.nobelprize.org/prizes/chemistry/2024/summary/" target="_blank" rel="noopener">NobelPrize.org</a>
-    </div>
-  </div>
+    <a href="https://www.nobelprize.org/prizes/chemistry/2024/summary/" target="_blank" rel="noopener" class="milestone-link">
+      NobelPrize.org
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l4-4-4-4"/></svg>
+    </a>
+  </article>
 
-</main>
+</section>
 
 <footer>
-  AI Milestones — Presentation Reference Links
+  <p>AI in 2026 — Presentation Reference Links</p>
 </footer>
 
 </body>
