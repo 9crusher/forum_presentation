@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI in 2026</title>
+  <link rel="icon" type="image/png" href="ds_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -271,6 +272,20 @@
       transform: translateX(2px);
     }
 
+    /* Quizbot */
+    #quizbot {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 1.25rem 2rem;
+      height: 500px;
+    }
+
+    #quizbot iframe {
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 16px;
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -330,6 +345,10 @@
 
       .milestone {
         padding: 2rem;
+      }
+
+      #quizbot {
+        padding: 0 2rem 2.5rem;
       }
 
       footer {
@@ -441,9 +460,14 @@
 
 </section>
 
+<div id="quizbot"></div>
+
 <footer>
   <p>AI in 2026 — Presentation Reference Links</p>
 </footer>
+
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/02/22/14/20260222142045-KVB93ZM5.js" defer></script>
 
 </body>
 </html>
